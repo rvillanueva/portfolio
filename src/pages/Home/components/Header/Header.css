@@ -1,0 +1,20 @@
+.home__header {
+  min-height: 80vh;
+  display: flex;
+  color: rgb(48, 48, 48);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.home__header__text {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  line-height: 1.4em;
+  font-size: calc(14px + 2vmin);
+  font-family: 'Merriweather', 'Helvetica Neue', Helvetica, sans-serif;
+}
