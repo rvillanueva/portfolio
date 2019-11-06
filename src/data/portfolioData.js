@@ -1,9 +1,15 @@
 const data = {
   items: [{
-    _id: 'waypost',
-    title: 'Waypost',
+    _id: 'mobilebanking',
+    title: 'Mobile Banking',
     subtitle: '',
-    thumbnailUrl: '/images/waypost.png'
+    thumbnailUrl: '/images/waypost-mobile.png'
+  }, {
+    _id: 'waypost',
+    title: 'Modern Invoicing',
+    subtitle: '',
+    thumbnailUrl: '/images/waypost-web.png',
+    thumbnailPosition: 'left center'
   }, {
     _id: 'jomalone',
     title: 'Jo Malone',
@@ -15,25 +21,29 @@ const data = {
     subtitle: '',
     thumbnailUrl: '/images/thinklab.jpg'
   }, {
-    _id: 'sarmapper',
-    title: 'Search and Rescue',
-    subtitle: '',
-    thumbnailUrl: './images/sarmapper.png'
-  }, {
     _id: 'ibmresearchcrm',
     title: 'Client Management',
     subtitle: '',
-    thumbnailUrl: './images/sarmapper.png'
+    thumbnailUrl: './images/compass.png',
+    thumbnailPosition: 'left top'
   }, {
     _id: 'geovis',
-    title: 'Location Tracking',
+    title: 'GPS Visualization',
     subtitle: '',
-    thumbnailUrl: './images/waypost-content.png'
+    thumbnailUrl: './images/gps.png',
+    thumbnailPosition: 'left center'
+  }, {
+    _id: 'sarmapper',
+    title: 'Search and Rescue',
+    subtitle: '',
+    thumbnailUrl: './images/sarmapper.png',
+    thumbnailPosition: 'left center'
   }, {
     _id: 'sentiment',
     title: 'Sentiment Analysis',
     subtitle: '',
-    thumbnailUrl: './images/sentiment.png'
+    thumbnailUrl: './images/sentiment.png',
+    thumbnailPosition: 'right center'
   }, {
     _id: 'foster',
     title: 'Foster Care',

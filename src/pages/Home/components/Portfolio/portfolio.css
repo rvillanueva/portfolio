@@ -5,6 +5,18 @@
   flex-direction: row;
 }
 
+@media screen and (max-width: 600px) {
+  .portfolio {
+    padding: 32px 18px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .portfolio {
+    padding: 32px 32px;
+  }
+}
+
 .portfolio__item {
   position: relative;
   padding: 1.5rem 1rem 30px 1rem;

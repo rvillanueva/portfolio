@@ -16,6 +16,28 @@ body, html {
   color: #09d3ac;
 }
 
+
+.fade-in-up-enter {
+  opacity: 0;
+  transform: translateY(4%);
+}
+
+.fade-in-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2s ease-out, transform 1s ease-out;
+}
+
+.fade-in-portfolio-enter {
+  opacity: 0;
+}
+
+.fade-in-portfolio-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-out 1s;
+}
+
+
 .flex-container {
   display: flex;
   justify-content: flex-start;
