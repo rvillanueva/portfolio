@@ -6,12 +6,13 @@ import './home-page.css';
 import {Navbar} from '../../components';
 import {CSSTransition} from 'react-transition-group';
 
-function HomePage({isLoaded, isScrolledDown}) {
+function HomePage({isLoaded, isScrolledDown, openProjectById}) {
   return (
     <div className="home-page">
-      <Navbar hideLogo={isScrolledDown}/>
+      <Navbar hideLogo={!isScrolledDown}/>
         <CSSTransition
           mountOnEnter
+          unmountOnExit
           in={isLoaded}
           timeout={2000}
           classNames="fade-in-up">
@@ -22,7 +23,7 @@ function HomePage({isLoaded, isScrolledDown}) {
           in={window.scrollY > 300 ? true : isLoaded}
           timeout={2000}
           classNames="fade-in-portfolio">
-          <Portfolio items={portfolioData.items} />
+          <Portfolio openProjectById={openProjectById} items={portfolioData.items} />
         </CSSTransition>
       <div className="self-splash" style={{
           backgroundImage: `url('./images/self.jpg')`

@@ -22,6 +22,10 @@
   padding: 1.5rem 1rem 30px 1rem;
 }
 
+.portfolio__item:hover {
+  cursor: pointer;
+}
+
 .portfolio__item__thumbnail {
   background-color: rgb(231, 231, 231);
   border-radius: 6px;
@@ -51,9 +55,9 @@
 
 .portfolio__item__text {
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   color: rgb(96, 96, 96);
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: 0.75em;
   text-transform: uppercase;
 }

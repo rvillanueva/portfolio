@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(34, 34, 34, 0.7);
+  overflow-y: scroll;
+}
+
+.close-overlay-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  color: rgb(171, 171, 171);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+}
+
+.close-overlay-btn:hover {
+  cursor: pointer;
+  color: rgb(224, 224, 224);
+  transition: color 200ms ease;
+}
+
+.close-overlay-btn:active {
+  color: white;
+}
+
+.project-card {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 52px;
+  margin-bottom: 60px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px 6px rgba(55, 55, 55, 0.2);
+}
+
+.project-card__heading {
+  background-color: white;
+  border-radius: 6px 6px 0 0;
+}
+
+.project-card__heading__title {
+  margin: 0;
+  font-size: 1.15em;
+  padding: 18px 24px;
+  color: rgb(48, 48, 48);
+}
+
+.project-card__image {
+  max-width: 100%;
+  max-height: 800px;
+  display: block;
+}
+
+.project-card__image-section {
+  background-color: rgb(85, 85, 85);
+}
+
+.project-card__description {
+  background-color: white;
+  padding: 24px 42px;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  color: rgb(77, 77, 77);
+  border-radius: 0 0 6px 6px;
+}
