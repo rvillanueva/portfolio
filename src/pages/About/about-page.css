@@ -1,8 +1,21 @@
 .about-page {
-  margin-top: 92px;
+}
+
+.about-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.selfie-splash {
+  height: 320px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-line-container {
+  margin-top: 42px;
 }
 
 .about-line {

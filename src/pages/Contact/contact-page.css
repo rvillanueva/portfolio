@@ -2,6 +2,12 @@
   padding-top: 52px;
 }
 
+.contact-envelope {
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .contact__text-container {
   min-height: 40vh;
   width: 100%;
@@ -17,4 +23,15 @@
   text-align: center;
   font-size: 1.3em;
   color: rgb(120, 120, 120);
+}
+
+.envelope-animation-enter {
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+.envelope-animation-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1000ms ease;
 }

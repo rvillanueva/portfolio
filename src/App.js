@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {HomePage, ContactPage, AboutPage} from './pages';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Overlay} from './components';
+import {Overlay, Drawer, Navbar} from './components';
 import {CSSTransition} from 'react-transition-group';
 import portfolioData from './data/portfolioData';
 
@@ -51,6 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <Router className="app">
+        <Navbar />
         <CSSTransition
           mountOnEnter
           unmountOnExit
@@ -62,11 +63,24 @@ class App extends React.Component {
           classNames="fade-overlay">
           <Overlay project={this.selectOpenProject()} close={this.closeOverlay}/>
         </CSSTransition>
-        <Switch>
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/" render={() => <HomePage isLoaded={this.state.isLoaded} isScrolledDown={this.state.isScrolledDown} openProjectById={this.openProjectById}/>} />
-        </Switch>
+        <CSSTransition
+          mountOnEnter
+          unmountOnExit
+          in={this.state.overlayIsOpen}
+          timeout={{
+            enter: 200,
+            exit: 100
+          }}
+          classNames="fade-overlay">
+          <Drawer close={this.closeDrawer}/>
+        </CSSTransition>
+        <div className="page-content">
+          <Switch>
+            <Route path="/about" component={AboutPage} />
+            <Route path="/contact" component={ContactPage} />
+            <Route path="/" render={() => <HomePage isLoaded={this.state.isLoaded} isScrolledDown={this.state.isScrolledDown} openProjectById={this.openProjectById}/>} />
+          </Switch>
+        </div>
       </Router>
     );
   }
