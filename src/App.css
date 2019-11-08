@@ -2,9 +2,10 @@ body, html {
   padding: 0;
   margin: 0;
   background-color: rgb(255, 255, 255);
-  color: rgb(45, 45, 45);
+  color: rgb(64, 62, 62);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 .app {
@@ -16,6 +17,10 @@ body, html {
 
 .App-link {
   color: #09d3ac;
+}
+
+a {
+  color: rgb(45, 45, 45);
 }
 
 .fade-in-logo-enter {
@@ -100,6 +105,12 @@ body, html {
   flex-grow: 1;
   background: tomato;
   color: white;
+}
+
+.content-container {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 600px) {

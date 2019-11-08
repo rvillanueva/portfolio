@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {HomePage} from './pages';
+import {HomePage, ContactPage, AboutPage} from './pages';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Overlay} from './components';
 import {CSSTransition} from 'react-transition-group';
@@ -63,6 +63,8 @@ class App extends React.Component {
           <Overlay project={this.selectOpenProject()} close={this.closeOverlay}/>
         </CSSTransition>
         <Switch>
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route path="/" render={() => <HomePage isLoaded={this.state.isLoaded} isScrolledDown={this.state.isScrolledDown} openProjectById={this.openProjectById}/>} />
         </Switch>
       </Router>

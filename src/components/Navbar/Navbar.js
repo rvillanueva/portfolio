@@ -2,6 +2,8 @@ import React from 'react';
 import './navbar.css';
 import {CSSTransition} from 'react-transition-group';
 import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 function Navbar({hideLogo}) {
   return (
@@ -16,9 +18,14 @@ function Navbar({hideLogo}) {
         </CSSTransition>
       </div>
       <div className="navbar__right">
-        <a className="navbar__link" href="https://medium.com/@ryanjvillanueva">Blog</a>
-        <a className="navbar__link" href="https://github.com/rvillanueva">Github</a>
-        <a className="navbar__link" href="https://www.linkedin.com/in/ryanjvillanueva/">LinkedIn</a>
+        <div className="navbar__links">
+          <Link className="navbar__link" to="/about">About</Link>
+          <a className="navbar__link" href="https://medium.com/@ryanjvillanueva">Blog</a>
+          <Link className="navbar__link" to="/contact">Contact</Link>
+        </div>
+        <div className="navbar__drawer-toggle">
+          <FontAwesomeIcon icon={faBars} />
+        </div>
       </div>
     </div>
   );
