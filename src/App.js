@@ -69,17 +69,7 @@ class App extends React.Component {
           classNames="fade-overlay">
           <Overlay project={this.selectOpenProject()} close={this.closeOverlay}/>
         </CSSTransition>
-        <CSSTransition
-          mountOnEnter
-          unmountOnExit
-          in={this.state.drawerIsOpen}
-          timeout={{
-            enter: 200,
-            exit: 100
-          }}
-          classNames="drawer-animation">
-          <Drawer close={() => this.toggleDrawer(false)}/>
-        </CSSTransition>
+        <Drawer isOpen={this.state.drawerIsOpen} close={() => this.toggleDrawer(false)}/>
         <div className="page-content">
           <Switch>
             <Route path="/about" component={AboutPage} />
