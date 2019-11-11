@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
-function Navbar({hideLogo}) {
+function Navbar({hideLogo, toggleDrawer}) {
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -23,7 +23,7 @@ function Navbar({hideLogo}) {
           <a className="navbar__link" href="https://medium.com/@ryanjvillanueva">Blog</a>
           <Link className="navbar__link" to="/contact">Contact</Link>
         </div>
-        <div className="navbar__drawer-toggle">
+        <div className="navbar__drawer-toggle" onClick={toggleDrawer}>
           <FontAwesomeIcon icon={faBars} />
         </div>
       </div>

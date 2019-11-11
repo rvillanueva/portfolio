@@ -13,7 +13,8 @@ class App extends React.Component {
       isScrolledDown: false,
       isLoaded: false,
       overlayIsOpen: false,
-      openProjectId: null
+      openProjectId: null,
+      drawerIsOpen: false
     }
   }
   componentDidMount() {
@@ -48,10 +49,15 @@ class App extends React.Component {
   selectOpenProject = () => {
     return portfolioData.items.filter(item => item._id === this.state.openProjectId)[0] || null;
   }
+  toggleDrawer = bool => {
+    this.setState({
+      drawerIsOpen: typeof bool === 'boolean' ? bool : !this.state.drawerIsOpen
+    })
+  }
   render() {
     return (
       <Router className="app">
-        <Navbar />
+        <Navbar toggleDrawer={this.toggleDrawer}/>
         <CSSTransition
           mountOnEnter
           unmountOnExit
@@ -66,13 +72,13 @@ class App extends React.Component {
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={this.state.overlayIsOpen}
+          in={this.state.drawerIsOpen}
           timeout={{
             enter: 200,
             exit: 100
           }}
-          classNames="fade-overlay">
-          <Drawer close={this.closeDrawer}/>
+          classNames="drawer-animation">
+          <Drawer close={() => this.toggleDrawer(false)}/>
         </CSSTransition>
         <div className="page-content">
           <Switch>

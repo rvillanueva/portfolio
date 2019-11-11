@@ -1,0 +1,23 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 180px;
+  background-color: white;
+  box-shadow: 2px 2px 4px 4px rgba(84, 84, 84, 0.2);
+  z-index: 99999;
+  padding-top: 24px;
+}
+
+a.drawer__link {
+  text-decoration: none;
+  display: block;
+  padding: 16px 24px;
+  background-color: white;
+}
+
+a.drawer__link:hover {
+  background-color: rgb(241, 241, 241);
+  transition: background-color 200ms ease;
+}
