@@ -18,9 +18,9 @@ async function main(bucketName) {
         Key: stripHtmlExt(path.relative(basePath, file.filepath)),
         ContentType: mime.lookup(file.filepath)
       }
-      /*if(file.filepath.indexOf('.html') > -1) {
+      if(file.filepath.indexOf('.html') > -1) {
         file.uploadParams.CacheControl = 'max-age=0,no-cache,no-store,must-revalidate';
-      }*/
+      }
       return file;
     });
     const promises = filesWithMetadata.map(file => {
