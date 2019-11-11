@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'p5/lib/p5.min.js';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Portfolio from './components/Portfolio/Portfolio';
+import Background from './components/Background/Background';
 import portfolioData from '../../data/portfolioData';
 import './home-page.css';
 import {CSSTransition} from 'react-transition-group';
@@ -8,6 +9,7 @@ import {CSSTransition} from 'react-transition-group';
 function HomePage({isLoaded, isScrolledDown, openProjectById}) {
   return (
     <div className="home-page">
+      <Background />
       <CSSTransition
         mountOnEnter
         unmountOnExit

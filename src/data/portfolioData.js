@@ -24,7 +24,8 @@ const data = {
     _id: 'ibmresearchcrm',
     title: 'IBM Research: CRM',
     thumbnailUrl: './images/compass.png',
-    thumbnailPosition: 'left top'
+    thumbnailPosition: 'left top',
+    description: `The Compass was originally developed as a standalone catalog of IBM Research projects. Over time, it expanded to become the central platform for managing client visits to the flagship innovation lab. Over two years it processed over 400 clients.\n\nI started this project as a way to distribute information about IBM Research projects around the world. As we continued operations in our innovation lab, we began to receive a much higher volume of visit requests and needed to process them systematically.\n\nAs tool lead, I regularly worked with our team and other internal stakeholders to map out requirements, develop features, and deploy them for use.`
   }, {
     _id: 'sarmapper',
     title: 'Search and Rescue: Mapping',
