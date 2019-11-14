@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
-function Navbar({hideLogo, toggleDrawer}) {
+function Navbar({hideLogo, toggleDrawer, isScrolledDown}) {
   return (
-    <div className="navbar">
+    <div className={`navbar${isScrolledDown ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__left">
         <CSSTransition
           mountOnEnter

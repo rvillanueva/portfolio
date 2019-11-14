@@ -6,7 +6,7 @@ class Header extends React.Component {
     return (
       <header className="home__header">
         <div className="home__header__text">
-          Ryan Villanueva is a full stack developer and business strategist in Brooklyn, NY. He graduated from Wharton and has created interactive experiences for organizations like IBM Research, McDonalds, Pepsi, Jo Malone, and AB InBev. 
+          Ryan Villanueva is a NYC-based full stack developer who specializes in emerging technologies. He graduated from Wharton and has worked with organizations like IBM Research, McDonalds, Pepsi, Jo Malone, and AB InBev. 
         </div>
       </header>
     );

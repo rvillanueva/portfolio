@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <Router className="app">
-        <Navbar toggleDrawer={this.toggleDrawer}/>
+        <Navbar toggleDrawer={this.toggleDrawer} isScrolledDown={this.state.isScrolledDown}/>
         <CSSTransition
           mountOnEnter
           unmountOnExit
