@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {HomePage, ContactPage, AboutPage} from './pages';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Overlay, Drawer, Navbar} from './components';
+import {Overlay, Drawer, Navbar, ScrollToTop} from './components';
 import {CSSTransition} from 'react-transition-group';
 import portfolioData from './data/portfolioData';
 
@@ -12,6 +12,8 @@ class App extends React.Component {
     this.state = {
       isScrolledDown: false,
       isLoaded: false,
+      loadBackground: false,
+      loadPortfolio: false,
       overlayIsOpen: false,
       openProjectId: null,
       drawerIsOpen: false
@@ -30,6 +32,12 @@ class App extends React.Component {
         });
       }
     });
+    setTimeout(() => this.setState({
+      loadBackground: true
+    }), 2000)
+    setTimeout(() => this.setState({
+      loadPortfolio: true
+    }), 750)
     this.setState({
       isLoaded: true
     });
@@ -57,6 +65,7 @@ class App extends React.Component {
   render() {
     return (
       <Router className="app">
+        <ScrollToTop />
         <Navbar toggleDrawer={this.toggleDrawer} isScrolledDown={this.state.isScrolledDown}/>
         <CSSTransition
           mountOnEnter
@@ -72,9 +81,15 @@ class App extends React.Component {
         <Drawer isOpen={this.state.drawerIsOpen} close={() => this.toggleDrawer(false)}/>
         <div className="page-content">
           <Switch>
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
-            <Route path="/" render={() => <HomePage isLoaded={this.state.isLoaded} isScrolledDown={this.state.isScrolledDown} openProjectById={this.openProjectById}/>} />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactPage} />
+              <Route path="/" render={() => <HomePage
+                isLoaded={this.state.isLoaded}
+                isScrolledDown={this.state.isScrolledDown}
+                openProjectById={this.openProjectById}
+                loadBackground={this.state.loadBackground}
+                loadPortfolio={this.state.loadPortfolio}
+              />} />
           </Switch>
         </div>
       </Router>

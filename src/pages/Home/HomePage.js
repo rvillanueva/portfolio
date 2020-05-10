@@ -6,10 +6,10 @@ import portfolioData from '../../data/portfolioData';
 import './home-page.css';
 import {CSSTransition} from 'react-transition-group';
 
-function HomePage({isLoaded, isScrolledDown, openProjectById}) {
+function HomePage({isLoaded, isScrolledDown, openProjectById, loadBackground, loadPortfolio}) {
   return (
     <div className="home-page">
-      <Background />
+      { loadBackground ? <Background /> : null }
       <CSSTransition
         mountOnEnter
         unmountOnExit
@@ -18,9 +18,10 @@ function HomePage({isLoaded, isScrolledDown, openProjectById}) {
         classNames="fade-in-up">
         <Header />
       </CSSTransition>
+      { loadPortfolio ? null : <div className="home-page__header__spacer" />}
       <CSSTransition
         mountOnEnter
-        in={window.scrollY > 300 ? true : isLoaded}
+        in={window.scrollY > 300 ? true : loadPortfolio}
         timeout={2000}
         classNames="fade-in-portfolio">
         <Portfolio openProjectById={openProjectById} items={portfolioData.items} />
