@@ -5,7 +5,6 @@ const fsUtils = require('./utils/fs');
 const mime = require('mime-types');
 
 async function main(bucketName) {
-  try {
     const basePath = path.resolve(__dirname, '../build');
     await s3Utils.clearBucket(bucketName);
     const filepaths = await fsUtils.readDirWalk(`${path.resolve(__dirname, '../build')}/**/*`);
@@ -28,9 +27,6 @@ async function main(bucketName) {
     });
     await Promise.all(promises);
     console.log(`Successfully deployed to http://${bucketName}.s3-website-${s3Utils.region}.amazonaws.com/`);
-  } catch(e) {
-    console.error(e);
-  }
 }
 
 function stripHtmlExt(filepath) {
