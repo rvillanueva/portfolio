@@ -61,6 +61,12 @@ const data = {
     thumbnailUrl: './images/gps.png',
     thumbnailPosition: 'left center',
     description: `Personal project that compiled and visualized my Google Maps location history across half a decade.`
+  }, {
+    _id: 'harrypotter',
+    title: 'Harry Potter Fan Website',
+    thumbnailUrl: './images/harrypotter.png',
+    thumbnailPosition: 'top center',
+    description: `Created a Harry Potter fan website when I was 10 years old. Featured a realistic simulations of several literary scenes.`
   }]
 };
 
