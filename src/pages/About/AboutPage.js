@@ -7,8 +7,7 @@ function AboutPage() {
   }
   const skills = [{
     label: 'HTML/CSS/Javascript',
-    year: 2001,
-    helperText: 'Yes, I made a Harry Potter fanfic site when I was 9.'
+    year: 2001
   }, {
     label: 'Node.js',
     year: 2014
@@ -16,30 +15,19 @@ function AboutPage() {
     label: 'AWS',
     year: 2014
   }, {
-    label: 'Postgres',
-    year: 2017
+    label: 'Python'
   }, {
-    label: 'React',
-    year: 2016
+    label: 'SQL/MySQL/PostgreSQL'
   }, {
-    label: 'Babel'
+    label: 'NoSQL/MongoDB'
+  }, {
+    label: 'React/Angular.js/Vue.js',
+  },
+  {
+    label: 'SASS/SCSS/Less'
   }, {
     label: 'Wordpress',
     year: 2012
-  }, {
-    label: 'MongoDB'
-  }, {
-    label: 'Express'
-  }, {
-    label: 'Python'
-  }, {
-    label: 'SQL'
-  },
-  {
-    label: 'SCSS'
-  },
-  {
-    label: 'Angular.js'
   }
 ]
   return (
