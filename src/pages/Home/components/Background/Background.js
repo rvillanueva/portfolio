@@ -13,6 +13,9 @@ class Firefly {
     this.lightTimer = 0;
     this.lightDuration = 200;
   }
+  getPosition() {
+    return this.position;
+  }
   applyForce(force) {
     this.acceleration.add(force);
   }
@@ -40,8 +43,8 @@ class Firefly {
   }
   draw = (p5) => {
     const lightPercent = this.lightTimer / this.lightDuration;
-    const unlitColor = p5.color(210);
-    const litColor = p5.color(66, 42, 0);
+    const unlitColor = p5.color(185);
+    const litColor = p5.color(255, 190, 23);
     const lightIntensity = lightPercent < 0.5 ? lightPercent * 2 : (1 - lightPercent) * 2;
     const color = p5.lerpColor(unlitColor, litColor, lightIntensity);
     p5.fill(color);
@@ -50,13 +53,32 @@ class Firefly {
   }
 }
 
+class Attractor {
+  constructor(x, y, p5) {
+    this.position = p5.createVector(x, y)
+  }
+  createForce(position, p5) {
+    const mag = position.sub(this.position).mag()
+    console.log(position.sub(this.position).div(mag))
+    return position.sub(this.position).div(mag);
+  }
+}
+
 class Scene {
   particles = []
+  attractors = []
   addParticle(x, y, p5) {
     this.particles.push(new Firefly(x, y, p5));
   }
+  addAttractor(x, y, p5) {
+    this.attractors.push(new Attractor(x, y, p5))
+  }
   update = (p5) => {
     this.clearFallenParticles();
+    this.attractors.forEach(attractor => this.particles.forEach(particle => {
+      const force = attractor.createForce(particle.position, p5);
+      particle.applyForce(force)
+    }));
     this.particles = this.particles.map(particle => particle.update(p5));
   }
   clearFallenParticles() {
@@ -69,16 +91,22 @@ class Scene {
 
 class Background extends React.Component {
   flock = new Scene()
-  particles = []
   setup = (p5, canvasParentRef) => {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(canvasParentRef)
   }
   draw = p5 => {
     p5.clear();
-    while(this.flock.particles.length < 15) {
+    while (this.flock.attractors.length < 2) {
+      this.flock.addAttractor(
+        Math.round(window.innerWidth * Math.random()),
+        Math.round(window.innerHeight * Math.random()),
+        p5
+      )
+    }
+    while(this.flock.particles.length < 50) {
       this.flock.addParticle(Math.round(Math.random() * window.innerWidth), Math.round(Math.random() * window.innerHeight), p5);
     }
-    if(Math.random() < 0.015) {
+    if(Math.random() < 0.4) {
       this.flock.particles[Math.floor(Math.random() * this.flock.particles.length)].light();
     }
     this.flock.update(p5);

@@ -12,7 +12,7 @@ class Header extends React.Component {
     return (
       <header className="home__header">
         <div className="home__header__text">
-          Ryan Villanueva is a full stack developer in New York City with over {yearsExperienceText} years of professional experience leading technical projects and teams. He graduated from Wharton and has worked with organizations like IBM Research, McDonalds, Pepsi, Jo Malone, and AB InBev. 
+          Ryan Villanueva is a full stack software engineer in New York City with over {yearsExperienceText} years of professional experience leading technical projects and teams. He graduated from Wharton and worked at IBM Research's innovation lab before moving on to venture-backed startups.
         </div>
       </header>
     );

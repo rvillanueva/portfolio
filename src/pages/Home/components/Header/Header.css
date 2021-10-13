@@ -10,11 +10,13 @@
 }
 
 .home__header__text {
-  max-width: 760px;
+  max-width: 800px;
+  width: 40%;
+  min-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
+  text-align: justify;
   line-height: 1.45em;
-  font-size: calc(14px + 2vmin);
+  font-size: calc(16px + 2vmin);
   font-family: 'Merriweather', 'Helvetica Neue', Helvetica, sans-serif;
 }

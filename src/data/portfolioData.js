@@ -1,5 +1,10 @@
 const data = {
   items: [{
+    _id: 'leif',
+    title: 'Leif',
+    thumbnailUrl: '/images/leif-macbook.png',
+    description: 'At Leif, I led a team of software engineers building technology to increase access to education. Leif\'s income share agreements helped thousands of students get an education with less financial risk.'
+  }, {
     _id: 'jomalone',
     title: 'Jo Malone',
     thumbnailUrl: '/images/jomalone.jpg',
