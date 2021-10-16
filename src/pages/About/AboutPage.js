@@ -15,7 +15,8 @@ function AboutPage() {
     label: 'AWS',
     year: 2014
   }, {
-    label: 'Python'
+    label: 'Python',
+    year: 2019
   }, {
     label: 'SQL/MySQL/PostgreSQL'
   }, {
@@ -44,7 +45,7 @@ function AboutPage() {
           <div className="about-line">
             <label className="about-line__label">Code Samples</label>
             <div className="about-line__content">
-              <a href="https://github.com/rvillanueva">Github</a>
+              <a href="https://github.com/rvillanueva">GitHub</a>
             </div>
           </div>
           <div className="about-line">

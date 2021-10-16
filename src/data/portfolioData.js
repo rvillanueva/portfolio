@@ -1,24 +1,35 @@
 const data = {
   items: [{
-    _id: 'leif',
-    title: 'Leif',
-    thumbnailUrl: '/images/leif-macbook.png',
-    description: 'At Leif, I led a team of software engineers building technology to increase access to education. Leif\'s income share agreements helped thousands of students get an education with less financial risk.'
-  }, {
     _id: 'jomalone',
     title: 'Jo Malone',
     thumbnailUrl: '/images/jomalone.jpg',
     description: 'At Perch Interactive, we were tasked by Jo Malone to create an immersive experience that merged digital and physical interactions. We created a display case that detected when a customer picked up a fragrance and delivered beautiful floral animations.'
-  }, {
-    _id: 'mobilebanking',
-    title: 'Waypost: Mobile Banking',
-    thumbnailUrl: '/images/waypost-mobile.png',
-    description: 'Developed a mobile banking platform for the independent workforce. We focused on making it easy to set aside money for taxes, track expenses, and remind clients about unpaid invopices. Built on React Native with a Node.js backend and Plaid integration.'
+  },  {
+    _id: 'leif',
+    title: 'Leif',
+    thumbnailUrl: '/images/leif-macbook.png',
+    description: 'At Leif, I led a team of software engineers building technology to increase access to education. Leif\'s income share agreements have helped tens of thousands of students get an education with less financial risk.'
   }, {
     _id: 'ibmresearch',
     title: 'IBM Research: Innovation Lab',
     thumbnailUrl: '/images/thinklab.jpg',
     description: 'At the IBM Research THINKLab, I created immersive experiences to demonstrate our research capabilities and to identify new opportunities with Fortune 500 partners. I was in charge of the life sciences, healthcare, and material sciences engagements that helped accelerate millions in new business.'
+  }, {
+    _id: 'mobilebanking',
+    title: 'Waypost: Mobile Banking',
+    thumbnailUrl: '/images/waypost-mobile.png',
+    description: 'Developed a mobile banking platform for the independent workforce. We focused on making it easy to set aside money for taxes, track expenses, and remind clients about unpaid invoices. Built on React Native with a Node.js backend and Plaid integration.'
+  }, {
+    _id: 'voter',
+    title: 'Vot-ER',
+    thumbnailUrl: '/images/voter-mockup.jpg',
+    description: 'Designed and created a mobile-responsive webapp for Vot-ER to help healthcare providers to register their patients to vote.'
+  }, {
+    _id: 'foster',
+    title: 'NYC Child Services: Foster Care',
+    thumbnailUrl: './images/agingout.png',
+    thumbnailPosition: 'left top',
+    description: `Worked with the NYC Administration for Child Services and to create a resources for foster children aging out of the system. Interviewed users who were formerly in the foster care system and created digital resources around job search, scholarships, and housing assistance.`
   }, {
     _id: 'waypost',
     title: 'Waypost: Web App',
@@ -54,12 +65,6 @@ const data = {
     thumbnailUrl: './images/news/timeline.png',
     thumbnailPosition: 'left top',
     description: `Created for an IBM challenge to integate Watson services. The application pulled scraped news articles and analyzed the natural language to visualize information across timeline, map, and entity relationships. `
-  }, {
-    _id: 'foster',
-    title: 'NYC Child Services: Foster Care',
-    thumbnailUrl: './images/agingout.png',
-    thumbnailPosition: 'left top',
-    description: `Worked with the NYC Administration for Child Services and to create a resources for foster children aging out of the system. Interviewed users who were formerly in the foster care system and created digital resources around job search, scholarships, and housing assistance.`
   }, {
     _id: 'geovis',
     title: 'Location History Visualization',

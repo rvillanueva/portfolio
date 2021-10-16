@@ -59,7 +59,6 @@ class Attractor {
   }
   createForce(position, p5) {
     const mag = position.sub(this.position).mag()
-    console.log(position.sub(this.position).div(mag))
     return position.sub(this.position).div(mag);
   }
 }
