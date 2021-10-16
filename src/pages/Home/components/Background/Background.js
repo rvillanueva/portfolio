@@ -21,6 +21,8 @@ class Firefly {
     this.lightTimer++;
   }
   update = (p5) => {
+    const gravity = p5.createVector(0, 0);
+    this.applyForce(gravity)
     // Update velocity
     this.velocity.add(this.acceleration);
     // Limit speed
