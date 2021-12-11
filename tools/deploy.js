@@ -6,8 +6,10 @@ const mime = require("mime-types");
 
 async function main(bucketName) {
   bucketName = bucketName || process.env.AWS_S3_BUCKET;
+  console.log(`Deploying to ${bucketName}.`);
   const basePath = path.resolve(__dirname, "../build");
   await s3Utils.clearBucket(bucketName);
+  console.log("Bucket cleared.");
   const filepaths = await fsUtils.readDirWalk(
     `${path.resolve(__dirname, "../build")}/**/*`
   );

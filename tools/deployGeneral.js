@@ -1,3 +1,6 @@
 const deploy = require("./deploy");
-
-deploy();
+try {
+  deploy();
+} catch (err) {
+  throw err;
+}
