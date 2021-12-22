@@ -19,6 +19,11 @@
   line-height: 1.45em;
   font-size: calc(10px + 2vmin);
   font-family: "Merriweather", "Helvetica Neue", Helvetica, sans-serif;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .home__header__profile {
