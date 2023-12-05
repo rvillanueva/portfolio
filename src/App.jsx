@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { HomePage, ContactPage, AboutPage } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Overlay, Drawer, Navbar, ScrollToTop } from "./components";
+import { Overlay, Drawer, Navbar } from "./components";
 import { CSSTransition } from "react-transition-group";
 import portfolioData from "./data/portfolioData";
 
@@ -84,7 +84,6 @@ class App extends React.Component {
   render() {
     return (
       <Router className="app">
-        <ScrollToTop />
         <Navbar
           toggleDrawer={this.toggleDrawer}
           isScrolledDown={this.state.isScrolledDown}
