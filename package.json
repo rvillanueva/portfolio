@@ -2,11 +2,13 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "@vitejs/plugin-react": "^4.2.1",
     "p5": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,13 +18,9 @@
     "react-transition-group": "^4.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "node tools/deployGeneral.js",
-    "deploy:production": "node tools/deployProduction.js",
-    "deploy:staging": "node tools/deployStaging.js"
+    "dev": "npx vite serve src",
+    "preview": "npx vite preview --port 3000",
+    "build": "yarn install --frozen-lockfile && npx vite build src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,11 +43,14 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
     "aws-sdk": "^2.736.0",
     "dotenv": "^8.2.0",
     "mime-types": "^2.1.27",
     "ncp": "^2.0.0",
     "prettier": "^3.1.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "vite": "^5.0.5",
+    "vitest": "^1.0.1"
   }
 }
