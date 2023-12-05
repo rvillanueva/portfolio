@@ -1,4 +1,5 @@
 import React from "react";
+import {motion} from 'framer-motion'
 import "./Header.css";
 
 class Header extends React.Component {
@@ -33,14 +34,14 @@ class Header extends React.Component {
     const yearsExperienceText = this.getYearsText(yearsExperience);
     return (
       <header className="home__header">
-        <div className="home__header__text">
-          <div className="home__header__profile">
+        <motion.div className="home__header__text" initial={{opacity: 0, y: 200}} whileInView={{opacity: 1, y: 0}}>
+          <motion.div className="home__header__profile" >
             <img
               src="./images/profile-photo.jpg"
               className="home__header__profile__photo"
               alt="Ryan Villanueva"
             />
-          </div>
+          </motion.div>
           <div>
             Ryan Villanueva is a full stack software engineer in New York City
             with over {yearsExperienceText} years of professional experience
@@ -48,7 +49,7 @@ class Header extends React.Component {
             worked at IBM Research's innovation lab before moving on to
             venture-backed startups.
           </div>
-        </div>
+        </motion.div>
       </header>
     );
   }
