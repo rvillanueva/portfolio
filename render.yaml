@@ -1,0 +1,15 @@
+
+services:
+  - type: web
+    name: portfolio
+    runtime: static
+    buildCommand: yarn build
+    staticPublishPath: ./build
+    buildFilter:
+      ignoredPaths:
+        - src/**/*.spec.js
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: sameorigin
+    autoDeploy: false
