@@ -1,7 +1,6 @@
 import React from "react";
 import "./contact-page.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
+import { FaEnvelopeOpenText } from "react-icons/fa6";
 import { CSSTransition } from "react-transition-group";
 
 class ContactPage extends React.Component {
@@ -26,7 +25,7 @@ class ContactPage extends React.Component {
             classNames="envelope-animation"
           >
             <div className="contact-envelope">
-              <FontAwesomeIcon icon={faEnvelopeOpenText} />
+              <FaEnvelopeOpenText />
             </div>
           </CSSTransition>
           <div className="contact__text">
