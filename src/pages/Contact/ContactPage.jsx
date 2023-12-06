@@ -1,6 +1,6 @@
 import React from "react";
 import "./contact-page.css";
-import { FaEnvelopeOpenText } from "react-icons/fa6";
+import { HiOutlineMailOpen } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
 
 class ContactPage extends React.Component {
@@ -24,8 +24,8 @@ class ContactPage extends React.Component {
             timeout={1000}
             classNames="envelope-animation"
           >
-            <div className="contact-envelope">
-              <FaEnvelopeOpenText />
+            <div className="contact-envelope text-center">
+              <HiOutlineMailOpen className="inline-block" />
             </div>
           </CSSTransition>
           <div className="contact__text">

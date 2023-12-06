@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Header.css";
+import ContactButton from "./components/ContactButton";
 import { SiLinkedin, SiGithub } from "react-icons/si";
-
 class Header extends React.Component {
   getYearsText(y) {
     const yearsText = [
@@ -35,7 +35,10 @@ class Header extends React.Component {
     const yearsExperienceText = this.getYearsText(yearsExperience);
     return (
       <header className="home__header">
-        <div className="home__header__text">
+        <div
+          className="ml-auto mr-auto"
+          style={{ width: "80%", maxWidth: 800 }}
+        >
           <motion.div
             className="home__header__profile text-center"
             initial={{ opacity: 0, y: 40 }}
@@ -54,35 +57,21 @@ class Header extends React.Component {
             viewport={{ once: true }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", duration: 1.5, delay: 0.4 }}
+            className="home__header__text"
           >
             Ryan Villanueva is a full stack software engineer in New York City
             with over {yearsExperienceText} years of professional experience
             leading technical projects and teams. He graduated from Wharton and
             worked at IBM Research's innovation lab before moving on to
-            venture-backed startups.
+            engineering leadership venture-backed startups.
           </motion.div>
-          <motion.div
-            className="text-center mt-8  space-x-6"
-            style={{ fontSize: 24 }}
-          >
+          <div className="mt-6 text-center space-x-6">
+            {/* <ContactButton /> */}
             <motion.a
               href="https://www.linkedin.com/in/ryanjvillanueva/"
+              target="_blank"
               className="inline-block text-gray-400 hover:text-gray-600 cursor-pointer hover:transition-all"
-              whileHover={{ scale: 1.1 }}
-              initial={{ opacity: 0, y: -40 }}
-              viewport={{ once: true }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                duration: 0.5,
-                delay: 1.2,
-              }}
-            >
-              <SiLinkedin />
-            </motion.a>
-            <motion.a
-              href="https://github.com/rvillanueva"
-              className="inline-block text-gray-400 hover:text-gray-600 cursor-pointer hover:transition-all"
+              style={{ fontSize: 28 }}
               whileHover={{ scale: 1.1 }}
               initial={{ opacity: 0, y: -40 }}
               viewport={{ once: true }}
@@ -93,9 +82,26 @@ class Header extends React.Component {
                 delay: 1.4,
               }}
             >
+              <SiLinkedin />
+            </motion.a>
+            <motion.a
+              href="https://github.com/rvillanueva"
+              target="_blank"
+              className="inline-block text-gray-400 hover:text-gray-600 cursor-pointer hover:transition-all"
+              style={{ fontSize: 28 }}
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0, y: -40 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                duration: 0.5,
+                delay: 1.6,
+              }}
+            >
               <SiGithub />
             </motion.a>
-          </motion.div>
+          </div>
         </div>
       </header>
     );
