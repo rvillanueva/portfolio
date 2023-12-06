@@ -1,13 +1,15 @@
-body, html {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
   padding: 0;
   margin: 0;
   color: rgb(64, 62, 62);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
-}
-
-.app {
 }
 
 .App-logo {
@@ -48,7 +50,9 @@ a {
 .fade-in-up-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 2s ease-out, transform 1s ease-out;
+  transition:
+    opacity 2s ease-out,
+    transform 1s ease-out;
 }
 
 .fade-in-portfolio-enter {
@@ -69,7 +73,6 @@ a {
   transition: opacity 200ms ease-out;
 }
 
-
 .fade-overlay-exit {
   opacity: 1;
 }
@@ -78,8 +81,6 @@ a {
   opacity: 0;
   transition: opacity 100ms ease-out;
 }
-
-
 
 .flex-container {
   display: flex;
@@ -95,7 +96,7 @@ a {
 }
 
 .flex-cell:before {
-  content: '';
+  content: "";
   display: table;
   padding-top: 100%;
 }

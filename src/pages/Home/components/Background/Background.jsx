@@ -21,11 +21,11 @@ class Particle {
     this.position.add(this.velocity);
   }
   draw = (p5, offsetY) => {
-    const bottomColor = p5.color(245, 192, 118, 120);
-    const topColor = p5.color(156, 118, 214, 200);
+    const bottomColor = p5.color(245, 192, 118, 160);
+    const topColor = p5.color(156, 118, 214, 255);
     const percent = Math.max(
       Math.min((this.position.y + 200) / window.innerHeight, 1),
-      0
+      0,
     );
     const baseColor = p5.lerpColor(topColor, bottomColor, percent);
     const color = p5.lerpColor(p5.color(255), baseColor, this.life);
@@ -34,7 +34,7 @@ class Particle {
     return p5.circle(
       this.position.x,
       this.position.y - offsetY * this.r * 0.5,
-      this.r * window.devicePixelRatio
+      this.r * window.devicePixelRatio,
     );
   };
 }
@@ -90,7 +90,7 @@ class Background extends React.Component {
         Math.round(Math.random() * window.innerWidth),
         Math.round(Math.random() * this.height),
         Math.random() * 3,
-        p5
+        p5,
       );
     }
     this.scene.run(p5, this.offsetY, this.height);
