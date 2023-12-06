@@ -44,14 +44,14 @@ class App extends React.Component {
         this.setState({
           loadBackground: true,
         }),
-      2000
+      1000,
     );
     setTimeout(
       () =>
         this.setState({
           loadPortfolio: true,
         }),
-      750
+      750,
     );
     this.setState({
       isLoaded: true,
@@ -72,7 +72,7 @@ class App extends React.Component {
   selectOpenProject = () => {
     return (
       portfolioData.items.filter(
-        (item) => item._id === this.state.openProjectId
+        (item) => item._id === this.state.openProjectId,
       )[0] || null
     );
   };
