@@ -2,5 +2,6 @@
   "files.associations": {
     "*.ejs": "html",
     "*.js": "javascript"
-  }
+  },
+  "css.customData": [".vscode/tailwind.json"]
 }
