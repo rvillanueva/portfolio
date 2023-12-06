@@ -16,15 +16,7 @@ function HomePage({
   return (
     <div className="home-page">
       {loadBackground ? <Background /> : null}
-      <CSSTransition
-        mountOnEnter
-        unmountOnExit
-        in={isLoaded}
-        timeout={2000}
-        classNames="fade-in-up"
-      >
         <Header />
-      </CSSTransition>
       {loadPortfolio ? null : <div className="home-page__header__spacer" />}
       <CSSTransition
         mountOnEnter
