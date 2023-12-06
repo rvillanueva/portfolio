@@ -3,7 +3,6 @@ import "./navbar.css";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar({ hideLogo, toggleDrawer, isScrolledDown }) {
   return (
