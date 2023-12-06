@@ -26,9 +26,6 @@
     "preview": "npx vite preview --port 3000",
     "build": "yarn install --frozen-lockfile && npx vite build src"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
