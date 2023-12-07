@@ -1,7 +1,9 @@
 {
   "files.associations": {
     "*.ejs": "html",
-    "*.js": "javascript"
+    "*.js": "javascript",
+    "*.ts": "typescript",
+    "*.tsx,*jsx": "javascriptreact"
   },
   "css.customData": [".vscode/tailwind.json"]
 }

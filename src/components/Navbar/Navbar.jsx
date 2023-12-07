@@ -21,15 +21,6 @@ function Navbar({ hideLogo, toggleDrawer, isScrolledDown }) {
       </div>
       <div className="navbar__right">
         <div className="navbar__links">
-          <Link className="navbar__link" to="/about">
-            About
-          </Link>
-          <a
-            className="navbar__link"
-            href="https://medium.com/@ryanjvillanueva"
-          >
-            Blog
-          </a>
           <Link className="navbar__link" to="/contact">
             Contact
           </Link>

@@ -62,8 +62,8 @@ class Header extends React.Component {
             Ryan Villanueva is a full stack software engineer in New York City
             with over {yearsExperienceText} years of professional experience
             leading technical projects and teams. He graduated from Wharton and
-            worked at IBM Research's innovation lab before moving on to
-            engineering leadership venture-backed startups.
+            worked at IBM Research's innovation lab before moving to engineering
+            leadership at venture-backed startups.
           </motion.div>
           <div className="mt-6 text-center space-x-6">
             {/* <ContactButton /> */}

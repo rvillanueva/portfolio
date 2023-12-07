@@ -31,14 +31,13 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: grayscale(0.7) brightness(1.1) contrast(0.95);
   transition: filter 500ms ease;
 }
 .portfolio__item__thumbnail:hover {
   filter: none;
 }
 .portfolio__item__thumbnail__overlay {
-  opacity: 0.3;
+  opacity: 0.1;
   height: 100%;
   width: 100%;
   border-radius: 6px;
