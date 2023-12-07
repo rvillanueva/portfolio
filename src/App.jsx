@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { HomePage, ContactPage, AboutPage } from "./pages";
+import { HomePage, ContactPage } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Overlay, Drawer, Navbar } from "./components";
 import { CSSTransition } from "react-transition-group";
@@ -109,7 +109,6 @@ class App extends React.Component {
         />
         <div className="page-content">
           <Switch>
-            <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
             <Route
               path="/"
