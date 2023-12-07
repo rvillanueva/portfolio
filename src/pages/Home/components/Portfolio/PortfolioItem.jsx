@@ -13,7 +13,7 @@ function PortfolioItem({ item, openProjectById, motionVariants }) {
       className="portfolio__item flex-cell"
       onClick={() => openProjectById(item._id)}
       whileHover={{
-        scale: 0.97,
+        scale: 0.96,
         transition: {
           duration: 0.2,
           ease: "easeInOut",

@@ -21,14 +21,18 @@ class Particle {
     this.position.add(this.velocity);
   }
   draw = (p5, offsetY) => {
-    const bottomColor = p5.color(245, 192, 118, 160);
-    const topColor = p5.color(156, 118, 214, 255);
+    const bottomColor = p5.color(245, 179, 88, 160);
+    const topColor = p5.color(148, 99, 224, 255);
     const percent = Math.max(
       Math.min((this.position.y + 200) / window.innerHeight, 1),
       0,
     );
     const baseColor = p5.lerpColor(topColor, bottomColor, percent);
-    const color = p5.lerpColor(p5.color(255), baseColor, this.life);
+    const color = p5.lerpColor(
+      p5.color(255),
+      baseColor,
+      Math.pow(this.life, 0.5),
+    );
     p5.fill(color);
     p5.noStroke();
     return p5.circle(
@@ -89,7 +93,7 @@ class Background extends React.Component {
       this.scene.addParticle(
         Math.round(Math.random() * window.innerWidth),
         Math.round(Math.random() * this.height),
-        Math.random() * 3,
+        Math.random() * 3.5,
         p5,
       );
     }
