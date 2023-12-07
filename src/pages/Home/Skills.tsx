@@ -53,9 +53,10 @@ export default function Skills() {
       initial="hidden"
       whileInView="visible"
     >
-      <div className="flex flex-row space-x-12">
+      <div className="text-center px-12 sm:px-6">
         {skills.map((skill) => (
           <motion.div
+            className="inline-block px-6 py-2"
             variants={{
               hidden: {
                 opacity: 0,
