@@ -25,10 +25,10 @@ export default function Skills() {
       label: "Vue.js",
       year: 2020,
     },
-    {
-      label: "Angular",
-      year: 2016,
-    },
+    // {
+    //   label: "Angular",
+    //   year: 2016,
+    // },
     {
       label: "AWS",
       year: 2014,
@@ -56,6 +56,7 @@ export default function Skills() {
       <div className="text-center px-12 sm:px-6">
         {skills.map((skill) => (
           <motion.div
+            key={skill.label}
             className="inline-block px-6 py-2"
             variants={{
               hidden: {
