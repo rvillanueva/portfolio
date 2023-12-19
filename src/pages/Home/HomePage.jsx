@@ -6,6 +6,7 @@ import portfolioData from "../../data/portfolioData";
 import "./home-page.css";
 import { CSSTransition } from "react-transition-group";
 import Skills from "./Skills";
+import Companies from "./Companies";
 
 function HomePage({
   isLoaded,
@@ -18,8 +19,11 @@ function HomePage({
     <div className="home-page">
       {loadBackground ? <Background /> : null}
       <Header />
-      <div className="mt-24 mb-24">
+      <div className="mt-40 mb-40">
         <Skills />
+      </div>
+      <div className="mt-40 mb-40">
+        <Companies />
       </div>
       {loadPortfolio ? null : <div className="home-page__header__spacer" />}
       <CSSTransition
