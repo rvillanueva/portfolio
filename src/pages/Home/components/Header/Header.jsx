@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Header.css";
 import ContactButton from "./components/ContactButton";
-import { SiLinkedin, SiGithub } from "react-icons/si";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 class Header extends React.Component {
   getYearsText(y) {
     const yearsText = [
@@ -82,7 +82,7 @@ class Header extends React.Component {
                 delay: 1.4,
               }}
             >
-              <SiLinkedin />
+              <FaLinkedin />
             </motion.a>
             <motion.a
               href="https://github.com/rvillanueva"
@@ -99,7 +99,7 @@ class Header extends React.Component {
                 delay: 1.6,
               }}
             >
-              <SiGithub />
+              <FaGithub />
             </motion.a>
           </div>
         </div>

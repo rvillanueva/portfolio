@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { HomePage, ContactPage } from "./pages";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Overlay, Drawer, Navbar } from "./components";
 import { CSSTransition } from "react-transition-group";
 import portfolioData from "./data/portfolioData";
@@ -83,7 +83,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <Router className="app">
+      <Router>
         <Navbar
           toggleDrawer={this.toggleDrawer}
           isScrolledDown={this.state.isScrolledDown}
@@ -108,11 +108,11 @@ class App extends React.Component {
           close={() => this.toggleDrawer(false)}
         />
         <div className="page-content">
-          <Switch>
-            <Route path="/contact" component={ContactPage} />
+          <Routes>
+            <Route path="/contact" element={<ContactPage />} />
             <Route
               path="/"
-              render={() => (
+              element={
                 <HomePage
                   isLoaded={this.state.isLoaded}
                   isScrolledDown={this.state.isScrolledDown}
@@ -120,9 +120,9 @@ class App extends React.Component {
                   loadBackground={this.state.loadBackground}
                   loadPortfolio={this.state.loadPortfolio}
                 />
-              )}
+              }
             />
-          </Switch>
+          </Routes>
         </div>
       </Router>
     );
