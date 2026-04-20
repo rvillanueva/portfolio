@@ -1,21 +1,18 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import { HomePage, ContactPage } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Overlay, Drawer, Navbar } from "./components";
-import { CSSTransition } from "react-transition-group";
+import { AnimatePresence, motion } from "framer-motion";
 import portfolioData from "./data/portfolioData";
 
 function App() {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [loadBackground, setLoadBackground] = useState(false);
   const [loadPortfolio, setLoadPortfolio] = useState(false);
   const [overlayIsOpen, setOverlayIsOpen] = useState(false);
   const [openProjectId, setOpenProjectId] = useState(null);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-
-  const overlayRef = useRef(null);
 
   useEffect(() => {
     const url = new URL(window.location);
@@ -31,7 +28,6 @@ function App() {
 
     const backgroundTimer = setTimeout(() => setLoadBackground(true), 1000);
     const portfolioTimer = setTimeout(() => setLoadPortfolio(true), 750);
-    setIsLoaded(true);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -60,16 +56,18 @@ function App() {
   return (
     <Router>
       <Navbar toggleDrawer={toggleDrawer} isScrolledDown={isScrolledDown} />
-      <CSSTransition
-        mountOnEnter
-        unmountOnExit
-        in={overlayIsOpen}
-        timeout={{ enter: 200, exit: 100 }}
-        classNames="fade-overlay"
-        nodeRef={overlayRef}
-      >
-        <Overlay ref={overlayRef} project={openProject} close={closeOverlay} />
-      </CSSTransition>
+      <AnimatePresence>
+        {overlayIsOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Overlay project={openProject} close={closeOverlay} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Drawer isOpen={drawerIsOpen} close={() => toggleDrawer(false)} />
       <div className="page-content">
         <Routes>
@@ -78,7 +76,6 @@ function App() {
             path="/"
             element={
               <HomePage
-                isLoaded={isLoaded}
                 isScrolledDown={isScrolledDown}
                 openProjectById={openProjectById}
                 loadBackground={loadBackground}

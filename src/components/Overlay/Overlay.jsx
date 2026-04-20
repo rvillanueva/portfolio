@@ -7,10 +7,10 @@ function stopClick(e) {
   e.stopPropagation();
 }
 
-function Overlay({ close, project, ref }) {
+function Overlay({ close, project }) {
   if (!project)
     return (
-      <div ref={ref} className="overlay" onClick={() => close()}>
+      <div className="overlay" onClick={() => close()}>
         <button className="close-overlay-btn" onClick={close}>
           <FaXmark />
         </button>
@@ -18,7 +18,7 @@ function Overlay({ close, project, ref }) {
       </div>
     );
   return (
-    <div ref={ref} className="overlay" onClick={() => close()}>
+    <div className="overlay" onClick={() => close()}>
       <button
         className="close-overlay-btn"
         onClick={(e) => {

@@ -25,14 +25,3 @@
   font-size: 1.3em;
   color: rgb(120, 120, 120);
 }
-
-.envelope-animation-enter {
-  opacity: 0;
-  transform: translateY(20%);
-}
-
-.envelope-animation-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 1000ms ease;
-}
