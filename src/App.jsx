@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import { HomePage, ContactPage } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -6,127 +6,90 @@ import { Overlay, Drawer, Navbar } from "./components";
 import { CSSTransition } from "react-transition-group";
 import portfolioData from "./data/portfolioData";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isScrolledDown: false,
-      isLoaded: false,
-      loadBackground: false,
-      loadPortfolio: false,
-      overlayIsOpen: false,
-      openProjectId: null,
-      drawerIsOpen: false,
-    };
-  }
-  rewriteUrl() {
+function App() {
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [loadBackground, setLoadBackground] = useState(false);
+  const [loadPortfolio, setLoadPortfolio] = useState(false);
+  const [overlayIsOpen, setOverlayIsOpen] = useState(false);
+  const [openProjectId, setOpenProjectId] = useState(null);
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+
+  const overlayRef = useRef(null);
+
+  useEffect(() => {
     const url = new URL(window.location);
     if (url.pathname.indexOf("index.html") > 0) {
       window.location = "/";
     }
-  }
-  componentDidMount() {
-    this.rewriteUrl();
+
     const cutoff = 160;
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > cutoff && !this.state.isScrolledDown) {
-        this.setState({
-          isScrolledDown: true,
-        });
-      } else if (window.scrollY <= cutoff && this.state.isScrolledDown) {
-        this.setState({
-          isScrolledDown: false,
-        });
-      }
-    });
-    setTimeout(
-      () =>
-        this.setState({
-          loadBackground: true,
-        }),
-      1000,
-    );
-    setTimeout(
-      () =>
-        this.setState({
-          loadPortfolio: true,
-        }),
-      750,
-    );
-    this.setState({
-      isLoaded: true,
-    });
-  }
-  openProjectById = (projectId) => {
-    this.setState({
-      overlayIsOpen: true,
-      openProjectId: projectId,
-    });
-  };
-  closeOverlay = () => {
-    this.setState({
-      overlayIsOpen: false,
-      openProjectId: null,
-    });
-  };
-  selectOpenProject = () => {
-    return (
-      portfolioData.items.filter(
-        (item) => item._id === this.state.openProjectId,
-      )[0] || null
-    );
-  };
-  toggleDrawer = (bool) => {
-    this.setState({
-      drawerIsOpen: typeof bool === "boolean" ? bool : !this.state.drawerIsOpen,
-    });
-  };
-  render() {
-    return (
-      <Router>
-        <Navbar
-          toggleDrawer={this.toggleDrawer}
-          isScrolledDown={this.state.isScrolledDown}
-        />
-        <CSSTransition
-          mountOnEnter
-          unmountOnExit
-          in={this.state.overlayIsOpen}
-          timeout={{
-            enter: 200,
-            exit: 100,
-          }}
-          classNames="fade-overlay"
-        >
-          <Overlay
-            project={this.selectOpenProject()}
-            close={this.closeOverlay}
+    const onScroll = () => {
+      setIsScrolledDown(window.scrollY > cutoff);
+    };
+    window.addEventListener("scroll", onScroll);
+
+    const backgroundTimer = setTimeout(() => setLoadBackground(true), 1000);
+    const portfolioTimer = setTimeout(() => setLoadPortfolio(true), 750);
+    setIsLoaded(true);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(backgroundTimer);
+      clearTimeout(portfolioTimer);
+    };
+  }, []);
+
+  const openProjectById = useCallback((projectId) => {
+    setOverlayIsOpen(true);
+    setOpenProjectId(projectId);
+  }, []);
+
+  const closeOverlay = useCallback(() => {
+    setOverlayIsOpen(false);
+    setOpenProjectId(null);
+  }, []);
+
+  const toggleDrawer = useCallback((bool) => {
+    setDrawerIsOpen((prev) => (typeof bool === "boolean" ? bool : !prev));
+  }, []);
+
+  const openProject =
+    portfolioData.items.find((item) => item._id === openProjectId) || null;
+
+  return (
+    <Router>
+      <Navbar toggleDrawer={toggleDrawer} isScrolledDown={isScrolledDown} />
+      <CSSTransition
+        mountOnEnter
+        unmountOnExit
+        in={overlayIsOpen}
+        timeout={{ enter: 200, exit: 100 }}
+        classNames="fade-overlay"
+        nodeRef={overlayRef}
+      >
+        <Overlay ref={overlayRef} project={openProject} close={closeOverlay} />
+      </CSSTransition>
+      <Drawer isOpen={drawerIsOpen} close={() => toggleDrawer(false)} />
+      <div className="page-content">
+        <Routes>
+          <Route path="/contact" element={<ContactPage />} />
+          <Route
+            path="/"
+            element={
+              <HomePage
+                isLoaded={isLoaded}
+                isScrolledDown={isScrolledDown}
+                openProjectById={openProjectById}
+                loadBackground={loadBackground}
+                loadPortfolio={loadPortfolio}
+              />
+            }
           />
-        </CSSTransition>
-        <Drawer
-          isOpen={this.state.drawerIsOpen}
-          close={() => this.toggleDrawer(false)}
-        />
-        <div className="page-content">
-          <Routes>
-            <Route path="/contact" element={<ContactPage />} />
-            <Route
-              path="/"
-              element={
-                <HomePage
-                  isLoaded={this.state.isLoaded}
-                  isScrolledDown={this.state.isScrolledDown}
-                  openProjectById={this.openProjectById}
-                  loadBackground={this.state.loadBackground}
-                  loadPortfolio={this.state.loadPortfolio}
-                />
-              }
-            />
-          </Routes>
-        </div>
-      </Router>
-    );
-  }
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

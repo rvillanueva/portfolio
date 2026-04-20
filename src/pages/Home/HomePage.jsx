@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "./components/Header/Header";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Background from "./components/Background/Background";
@@ -9,12 +9,12 @@ import Skills from "./Skills";
 import Companies from "./Companies";
 
 function HomePage({
-  isLoaded,
   isScrolledDown,
   openProjectById,
   loadBackground,
   loadPortfolio,
 }) {
+  const portfolioRef = useRef(null);
   return (
     <div className="home-page">
       {loadBackground ? <Background /> : null}
@@ -31,8 +31,10 @@ function HomePage({
         in={window.scrollY > 300 ? true : loadPortfolio}
         timeout={2000}
         classNames="fade-in-portfolio"
+        nodeRef={portfolioRef}
       >
         <Portfolio
+          ref={portfolioRef}
           openProjectById={openProjectById}
           items={portfolioData.items}
         />

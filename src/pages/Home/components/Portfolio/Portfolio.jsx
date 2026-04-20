@@ -3,9 +3,9 @@ import PortfolioItem from "./PortfolioItem";
 import "./portfolio.css";
 import { motion } from "framer-motion";
 
-function Portfolio({ items, openProjectById }) {
+function Portfolio({ items, openProjectById, ref }) {
   return (
-    <motion.div className="portfolio flex-container">
+    <motion.div ref={ref} className="portfolio flex-container">
       {items.map((item) => (
         <PortfolioItem
           openProjectById={openProjectById}
