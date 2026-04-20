@@ -24,64 +24,6 @@ a {
   color: rgb(45, 45, 45);
 }
 
-.fade-in-logo-enter {
-  opacity: 0;
-}
-
-.fade-in-logo-enter-active {
-  opacity: 1;
-  transition: opacity 750ms ease-out;
-}
-
-.fade-in-logo-exit-active {
-  opacity: 0;
-  transition: opacity 200ms ease-out;
-}
-
-.fade-in-logo-exit-done {
-  opacity: 0;
-}
-
-.fade-in-up-enter {
-  opacity: 0;
-  transform: translateY(4%);
-}
-
-.fade-in-up-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 2s ease-out,
-    transform 1s ease-out;
-}
-
-.fade-in-portfolio-enter {
-  opacity: 0;
-}
-
-.fade-in-portfolio-enter-active {
-  opacity: 1;
-  transition: opacity 1s ease-out 1s;
-}
-
-.fade-overlay-enter {
-  opacity: 0;
-}
-
-.fade-overlay-enter-active {
-  opacity: 1;
-  transition: opacity 200ms ease-out;
-}
-
-.fade-overlay-exit {
-  opacity: 1;
-}
-
-.fade-overlay-exit-active {
-  opacity: 0;
-  transition: opacity 100ms ease-out;
-}
-
 .flex-container {
   display: flex;
   justify-content: flex-start;

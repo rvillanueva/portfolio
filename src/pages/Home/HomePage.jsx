@@ -4,17 +4,12 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Background from "./components/Background/Background";
 import portfolioData from "../../data/portfolioData";
 import "./home-page.css";
-import { CSSTransition } from "react-transition-group";
+import { motion } from "framer-motion";
 import Skills from "./Skills";
 import Companies from "./Companies";
 
-function HomePage({
-  isLoaded,
-  isScrolledDown,
-  openProjectById,
-  loadBackground,
-  loadPortfolio,
-}) {
+function HomePage({ openProjectById, loadBackground, loadPortfolio }) {
+  const showPortfolio = window.scrollY > 300 || loadPortfolio;
   return (
     <div className="home-page">
       {loadBackground ? <Background /> : null}
@@ -25,18 +20,20 @@ function HomePage({
       <div className="mt-40 mb-40">
         <Companies />
       </div>
-      {loadPortfolio ? null : <div className="home-page__header__spacer" />}
-      <CSSTransition
-        mountOnEnter
-        in={window.scrollY > 300 ? true : loadPortfolio}
-        timeout={2000}
-        classNames="fade-in-portfolio"
-      >
-        <Portfolio
-          openProjectById={openProjectById}
-          items={portfolioData.items}
-        />
-      </CSSTransition>
+      {showPortfolio ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+        >
+          <Portfolio
+            openProjectById={openProjectById}
+            items={portfolioData.items}
+          />
+        </motion.div>
+      ) : (
+        <div className="home-page__header__spacer" />
+      )}
     </div>
   );
 }
