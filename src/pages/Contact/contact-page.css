@@ -1,27 +1,77 @@
 .contact-page {
-  padding-top: 52px;
-}
-
-.contact-envelope {
-  font-size: 100px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: rgb(120, 120, 120);
-}
-
-.contact__text-container {
-  min-height: 40vh;
-  width: 100%;
+  min-height: 70vh;
+  padding: clamp(40px, 10vh, 120px) 24px 80px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-.contact__text {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+.contact__inner {
+  max-width: 640px;
   text-align: center;
-  font-size: 1.3em;
-  color: rgb(120, 120, 120);
+}
+
+.contact-envelope {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  font-size: 44px;
+  color: var(--fg);
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  margin-bottom: 28px;
+  box-shadow: 0 10px 30px rgba(20, 19, 15, 0.08);
+}
+
+.contact__heading {
+  font-family: "Fraunces", "Merriweather", Georgia, serif;
+  font-size: clamp(2.5rem, 4vw + 1rem, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: var(--fg);
+}
+
+.contact__text {
+  font-size: clamp(1.0625rem, 0.6vw + 0.95rem, 1.25rem);
+  line-height: 1.55;
+  color: var(--fg-muted);
+  margin: 0 auto 32px;
+  max-width: 520px;
+}
+
+.contact__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background-color: var(--fg);
+  color: var(--bg);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "JetBrains Mono", Menlo, Monaco, monospace;
+  letter-spacing: -0.01em;
+  transition: transform 180ms ease, box-shadow 200ms ease;
+  box-shadow: 0 1px 2px rgba(20, 19, 15, 0.1),
+    0 12px 24px rgba(20, 19, 15, 0.15);
+}
+
+.contact__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(20, 19, 15, 0.12),
+    0 18px 32px rgba(20, 19, 15, 0.2);
+}
+
+.contact__cta__icon {
+  font-size: 16px;
+  transition: transform 200ms ease;
+}
+
+.contact__cta:hover .contact__cta__icon {
+  transform: translate(2px, -2px);
 }

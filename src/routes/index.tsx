@@ -44,17 +44,18 @@ function HomePage() {
         </ClientOnly>
       ) : null}
       <Header />
-      <div className="mt-40 mb-40">
+      <div className="my-24 sm:my-32">
         <Skills />
       </div>
-      <div className="mt-40 mb-40">
+      <div className="my-24 sm:my-32">
         <Companies />
       </div>
       {showPortfolio ? (
         <motion.div
+          className="my-24 sm:my-32"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
         >
           <Portfolio
             openProjectById={openProjectById}

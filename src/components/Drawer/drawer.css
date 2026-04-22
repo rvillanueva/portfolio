@@ -1,10 +1,9 @@
 .drawer-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(57, 57, 57, 0.5);
+  inset: 0;
+  background-color: rgba(20, 19, 15, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 99999;
 }
 
@@ -13,21 +12,37 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 240px;
-  background-color: white;
-  box-shadow: 2px 2px 4px 4px rgba(84, 84, 84, 0.2);
-  padding-top: 24px;
+  width: 280px;
+  max-width: 85vw;
+  background-color: var(--bg-elevated);
+  border-right: 1px solid var(--border);
+  box-shadow: 10px 0 40px rgba(20, 19, 15, 0.15);
+  padding: 80px 16px 32px;
   z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 a.drawer__link {
-  text-decoration: none;
-  display: block;
-  padding: 16px 24px;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  font-family: "Fraunces", "Merriweather", Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--fg);
+  border-radius: 12px;
+  letter-spacing: -0.01em;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
 a.drawer__link:hover {
-  background-color: rgb(241, 241, 241);
-  transition: background-color 200ms ease;
+  background-color: var(--accent-soft);
+}
+
+a.drawer__link:active {
+  background-color: var(--accent-soft);
+  opacity: 0.8;
 }
