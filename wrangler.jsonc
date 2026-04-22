@@ -2,8 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portfolio",
   "compatibility_date": "2026-04-19",
+  "build": {
+    "command": "pnpm build"
+  },
   "assets": {
-    "directory": "./build",
-    "not_found_handling": "single-page-application"
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
   }
 }

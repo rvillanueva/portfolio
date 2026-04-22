@@ -1,13 +1,13 @@
-
 services:
   - type: web
     name: portfolio
-    runtime: static
-    buildCommand: yarn build
-    staticPublishPath: ./build
-    buildFilter:
-      ignoredPaths:
-        - src/**/*.spec.js
+    runtime: node
+    plan: starter
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
     headers:
       - path: /*
         name: X-Frame-Options
