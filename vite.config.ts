@@ -9,7 +9,12 @@ export default defineConfig({
   server: { port },
   preview: { port },
   plugins: [
-    tanstackStart(),
+    tanstackStart({
+      pages: [
+        { path: "/", prerender: { enabled: true } },
+        { path: "/contact", prerender: { enabled: true } },
+      ],
+    }),
     viteReact(),
   ],
 });
