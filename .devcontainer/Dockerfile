@@ -6,14 +6,16 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 WORKDIR /workspace
 
-ADD package.json /workspace
-ADD yarn.lock /workspace
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
 
-RUN yarn install
+ADD package.json /workspace
+ADD pnpm-lock.yaml /workspace
+
+RUN pnpm install --frozen-lockfile
 
 ADD .gitignore /workspace
 ADD .git /workspace/.git
-     
+
 RUN npx playwright install --with-deps
 
 ADD . /workspace

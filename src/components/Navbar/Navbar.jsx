@@ -1,7 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { FaBars } from "react-icons/fa6";
 
 function Navbar({ hideLogo, toggleDrawer, isScrolledDown }) {

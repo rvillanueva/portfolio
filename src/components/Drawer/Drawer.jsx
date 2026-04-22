@@ -1,6 +1,6 @@
 import React from "react";
 import "./drawer.css";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 
 function Drawer({ close, isOpen }) {

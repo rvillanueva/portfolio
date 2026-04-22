@@ -1,7 +1,11 @@
-import React from "react";
-import "./contact-page.css";
-import { HiOutlineMailOpen } from "react-icons/hi";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import "../pages/Contact/contact-page.css";
+
+export const Route = createFileRoute("/contact")({
+  component: ContactPage,
+});
 
 function ContactPage() {
   return (
@@ -23,5 +27,3 @@ function ContactPage() {
     </div>
   );
 }
-
-export default ContactPage;
