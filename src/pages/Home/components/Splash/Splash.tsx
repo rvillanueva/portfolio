@@ -59,7 +59,7 @@ class Splash extends React.Component {
             transition={{ type: "spring", duration: 1.5, delay: 0.4 }}
             className="home__splash__text"
           >
-            Ryan Villanueva is a full stack software engineer in New York City
+            Ryan Villanueva is a software engineer in New York City
             focused on building agentic AI systems. With over{" "}
             {yearsExperienceText} years of professional experience leading
             technical projects and teams, he designs and ships autonomous
