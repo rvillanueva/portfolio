@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 WORKDIR /workspace
 
-RUN corepack enable && corepack prepare pnpm@10 --activate
+RUN corepack enable && corepack prepare pnpm@10.33.1 --activate
 
 ADD package.json /workspace
 ADD pnpm-lock.yaml /workspace
