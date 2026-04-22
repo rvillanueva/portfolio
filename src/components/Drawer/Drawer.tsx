@@ -1,9 +1,13 @@
-import React from "react";
 import "./drawer.css";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 
-function Drawer({ close, isOpen }) {
+type DrawerProps = {
+  close: () => void;
+  isOpen: boolean;
+};
+
+function Drawer({ close, isOpen }: DrawerProps) {
   return (
     <AnimatePresence>
       {isOpen && (
