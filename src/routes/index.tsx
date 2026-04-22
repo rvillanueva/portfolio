@@ -1,7 +1,7 @@
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Header from "../pages/Home/components/Header/Header";
+import Splash from "../pages/Home/components/Splash/Splash";
 import Portfolio from "../pages/Home/components/Portfolio/Portfolio";
 import Skills from "../pages/Home/Skills";
 import Companies from "../pages/Home/Companies";
@@ -43,7 +43,7 @@ function HomePage() {
           </Suspense>
         </ClientOnly>
       ) : null}
-      <Header />
+      <Splash />
       <div className="mt-40 mb-40">
         <Skills />
       </div>
@@ -62,7 +62,7 @@ function HomePage() {
           />
         </motion.div>
       ) : (
-        <div className="home-page__header__spacer" />
+        <div className="home-page__splash__spacer" />
       )}
     </div>
   );

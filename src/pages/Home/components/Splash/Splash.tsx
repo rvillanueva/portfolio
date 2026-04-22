@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./Header.css";
+import "./Splash.css";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
-class Header extends React.Component {
+class Splash extends React.Component {
   getYearsText(y: number): string {
     const yearsText = [
       "zero",
@@ -34,13 +34,13 @@ class Header extends React.Component {
     const yearsExperience = new Date().getFullYear() - 2014;
     const yearsExperienceText = this.getYearsText(yearsExperience);
     return (
-      <header className="home__header">
+      <header className="home__splash">
         <div
           className="ml-auto mr-auto"
           style={{ width: "80%", maxWidth: 800 }}
         >
           <motion.div
-            className="home__header__profile text-center"
+            className="home__splash__profile text-center"
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ class Header extends React.Component {
           >
             <img
               src="./images/profile-photo.jpg"
-              className="home__header__profile__photo inline-block"
+              className="home__splash__profile__photo inline-block"
               alt="Ryan Villanueva"
             />
           </motion.div>
@@ -57,12 +57,15 @@ class Header extends React.Component {
             viewport={{ once: true }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", duration: 1.5, delay: 0.4 }}
-            className="home__header__text"
+            className="home__splash__text"
           >
             Ryan Villanueva is a full stack software engineer in New York City
-            with over {yearsExperienceText} years of professional experience
-            leading technical projects and teams. He graduated from Wharton and
-            worked at IBM Research's innovation lab before moving to engineering
+            focused on building agentic AI systems. With over{" "}
+            {yearsExperienceText} years of professional experience leading
+            technical projects and teams, he designs and ships autonomous
+            agents, LLM-powered tools, and the infrastructure that lets them
+            work reliably in production. He graduated from Wharton and worked
+            at IBM Research's innovation lab before moving to engineering
             leadership at venture-backed startups.
           </motion.div>
           <div className="mt-6 text-center space-x-6">
@@ -108,4 +111,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default Splash;
