@@ -11,6 +11,7 @@ const SKILLS: Skill[] = [
   { label: "Python", year: 2019 },
   { label: "React", year: 2017 },
   { label: "Vue.js", year: 2020 },
+  { label: "Agentic AI", year: 2023 },
   { label: "AWS", year: 2014 },
   { label: "SQL/MySQL/PostgreSQL", year: 2017 },
   { label: "NoSQL/MongoDB", year: 2014 },

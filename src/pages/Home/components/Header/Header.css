@@ -16,35 +16,6 @@
   z-index: 1;
 }
 
-.home__header__badge-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-
-.home__header__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background-color: var(--bg-elevated);
-  border: 1px solid var(--border);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--fg-muted);
-  box-shadow: 0 1px 2px rgba(20, 19, 15, 0.03);
-}
-
-.home__header__badge__dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #22c55e;
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
-}
-
 .home__header__profile {
   display: flex;
   justify-content: center;
@@ -78,13 +49,6 @@
   font-size: clamp(1.0625rem, 0.7vw + 0.95rem, 1.25rem);
   color: var(--fg-muted);
   font-weight: 400;
-}
-
-.home__header__emph {
-  font-style: italic;
-  font-family: "Fraunces", "Merriweather", Georgia, serif;
-  color: var(--fg);
-  font-weight: 500;
 }
 
 .home__header__actions {

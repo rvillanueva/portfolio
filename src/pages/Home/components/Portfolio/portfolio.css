@@ -19,11 +19,6 @@
   color: var(--fg);
 }
 
-.portfolio-section__heading em {
-  font-style: italic;
-  color: var(--fg-muted);
-}
-
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

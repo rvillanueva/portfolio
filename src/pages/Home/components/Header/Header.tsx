@@ -39,18 +39,6 @@ export default function Header() {
     <header className="home__header">
       <div className="home__header__inner">
         <motion.div
-          className="home__header__badge-row"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <span className="home__header__badge">
-            <span className="home__header__badge__dot" />
-            Available for select engagements
-          </span>
-        </motion.div>
-
-        <motion.div
           className="home__header__profile"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -79,10 +67,9 @@ export default function Header() {
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
         >
           A full-stack software engineer in New York City with over{" "}
-          <em className="home__header__emph">{yearsExperienceText}</em> years
-          leading technical projects and teams. Wharton graduate, formerly at
-          IBM Research&rsquo;s innovation lab, now in engineering leadership at
-          venture-backed startups.
+          {yearsExperienceText} years leading technical projects and teams.
+          Wharton graduate, formerly at IBM Research&rsquo;s innovation lab,
+          now in engineering leadership at venture-backed startups.
         </motion.p>
 
         <motion.div

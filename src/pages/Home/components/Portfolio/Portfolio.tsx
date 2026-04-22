@@ -19,9 +19,7 @@ function Portfolio({ items, openProjectById }: PortfolioProps) {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="section-label">Selected Work</div>
-        <h2 className="portfolio-section__heading">
-          Recent <em>projects</em>
-        </h2>
+        <h2 className="portfolio-section__heading">Recent projects</h2>
       </motion.div>
       <motion.div
         className="portfolio"
