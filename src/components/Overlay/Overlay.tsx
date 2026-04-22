@@ -1,13 +1,19 @@
-import React from "react";
+import type { MouseEvent } from "react";
 import "./overlay.css";
 import { FaXmark } from "react-icons/fa6";
+import type { PortfolioItem } from "../../data/portfolioData";
 
-function stopClick(e) {
+type OverlayProps = {
+  close: () => void;
+  project: PortfolioItem | null;
+};
+
+function stopClick(e: MouseEvent) {
   e.preventDefault();
   e.stopPropagation();
 }
 
-function Overlay({ close, project }) {
+function Overlay({ close, project }: OverlayProps) {
   if (!project)
     return (
       <div className="overlay" onClick={() => close()}>
