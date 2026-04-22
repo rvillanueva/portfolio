@@ -67,9 +67,9 @@ export default function Header() {
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
         >
           A software engineer in New York City with over {yearsExperienceText}{" "}
-          years leading technical projects and teams. Wharton graduate,
-          formerly at IBM Research&rsquo;s innovation lab, with engineering
-          leadership experience at venture-backed startups.
+          years experience leading technical projects and teams. Wharton
+          graduate, formerly at IBM Research&rsquo;s innovation lab, with
+          engineering leadership experience at venture-backed startups.
         </motion.p>
 
         <motion.div
