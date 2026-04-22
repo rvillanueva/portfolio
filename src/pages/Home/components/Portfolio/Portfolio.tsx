@@ -10,15 +10,33 @@ type PortfolioProps = {
 
 function Portfolio({ items, openProjectById }: PortfolioProps) {
   return (
-    <motion.div className="portfolio flex-container">
-      {items.map((item) => (
-        <PortfolioItem
-          openProjectById={openProjectById}
-          key={item._id}
-          item={item}
-        />
-      ))}
-    </motion.div>
+    <section className="portfolio-section">
+      <motion.div
+        className="portfolio-section__header"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <div className="section-label">Selected Work</div>
+        <h2 className="portfolio-section__heading">Recent projects</h2>
+      </motion.div>
+      <motion.div
+        className="portfolio"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ staggerChildren: 0.06 }}
+      >
+        {items.map((item) => (
+          <PortfolioItem
+            openProjectById={openProjectById}
+            key={item._id}
+            item={item}
+          />
+        ))}
+      </motion.div>
+    </section>
   );
 }
 
