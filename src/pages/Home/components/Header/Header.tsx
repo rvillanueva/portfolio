@@ -66,10 +66,10 @@ export default function Header() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
         >
-          A full-stack software engineer in New York City with over{" "}
-          {yearsExperienceText} years leading technical projects and teams.
-          Wharton graduate, formerly at IBM Research&rsquo;s innovation lab,
-          now in engineering leadership at venture-backed startups.
+          A software engineer in New York City with over {yearsExperienceText}{" "}
+          years leading technical projects and teams. Wharton graduate,
+          formerly at IBM Research&rsquo;s innovation lab, with engineering
+          leadership experience at venture-backed startups.
         </motion.p>
 
         <motion.div

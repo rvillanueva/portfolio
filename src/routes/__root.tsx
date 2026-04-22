@@ -33,7 +33,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Ryan Villanueva is a full stack software engineer in New York City with over nine years of professional experience leading technical projects and teams. He graduated from Wharton and worked at IBM Research's innovation lab before moving to venture-backed startups.",
+          "Ryan Villanueva is a software engineer in New York City with over a decade of professional experience leading technical projects and teams. He graduated from Wharton and worked at IBM Research's innovation lab, with engineering leadership experience at venture-backed startups.",
       },
       { title: "Ryan Villanueva" },
     ],
